@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
-import {FaTimes} from "react-icons/fa";
-import {CiMenuFries} from "react-icons/ci";
+import { FaTimes } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Nav = () => {
     const [click, setClick] = useState(false);
@@ -9,22 +9,22 @@ const Nav = () => {
         setClick(!click);
     }
     const content = <>
-     <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-slate-900 transition">
+     <div className="md:hidden block absolute top-16 w-4/5 left-0 right-0 bg-slate-900 transition duration-500 ease-linear">
          <ul className="text-center text-xl p-20">
             <Link spy={true} smooth={true} to="Home">
-                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded">Home</li>
+                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded transition duration-300">Home</li>
             </Link>
             <Link spy={true} smooth={true} to="About">
-                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded">About</li>
+                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded transition duration-300">About</li>
             </Link>
             <Link spy={true} smooth={true} to="Services">
-                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded">Services</li>
+                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded transition duration-300">Services</li>
             </Link>
             <Link spy={true} smooth={true} to="Projects">
-                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded">Projects</li>
+                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded transition duration-300">Projects</li>
             </Link>
             <Link spy={true} smooth={true} to="Contact">
-                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded">Contact</li>
+                <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded transition duration-300">Contact</li>
             </Link>
          </ul>
      </div>
@@ -57,11 +57,11 @@ const Nav = () => {
                         </ul>
                     </div>
                 </div>
-                <div>
+                <div className="transition duration-500 ease-linear">
                     {click && content}
                 </div>
-                <button className="block sm:hidden transition" onClick={handleClick}>
-                    {click ? <FaTimes></FaTimes>: <CiMenuFries></CiMenuFries>}
+                <button className="block md:hidden transition" onClick={handleClick}>
+                    {click ? <FaTimes size={25}></FaTimes>: <GiHamburgerMenu size={25}></GiHamburgerMenu>}
                 </button>
            </div>
        </nav>
