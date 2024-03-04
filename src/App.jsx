@@ -1,13 +1,12 @@
+import Nav from "./components/Nav/Nav";
 
 
-function App() {
-
-
+const App = () => {
   return (
-    <>
-      <h1 className="text-center pb-3 mx-3">Hello World</h1>
-    </>
-  )
-}
+    <div className="bg-slate-900">
+      <Nav></Nav>
+    </div>
+  );
+};
 
-export default App
+export default App;
